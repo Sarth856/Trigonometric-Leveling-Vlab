@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+	<meta charset="utf-8">
+
+	<link rel="stylesheet" href="src/css/sim_style.css">
+	<link rel="stylesheet" href="src/css/sim_loading.css">
+	<link href="https://fonts.googleapis.com/css2?family=Open+Sans&amp;family=Raleway&amp;display=swap"
+		rel="stylesheet">
+
+	<link rel="icon" href="favicon.ico">
+	<title>Civil Engineering - Virtual Lab</title>
+	<script src="src/js/sim.js"></script>
+
+
+</head>
+
+<body>
+
+
+	<body style="margin:0; font-family: verdana; color: #000;">
+		<table align="center">
+			<tr>
+				<td>
+					<div id="simscreen">
+						<div id="title">
+							<h3>Trigonometric Leveling</h3>
+						</div>
+
+						<!-- Step 1 -->
+
+						<div class="Mainstep" id="home-Step1" style="visibility: visible;z-index: 1000;">
+
+							<strong class="incanvas" style="position: absolute; top: 20px; left: 0px;">STEP</strong>
+
+							<span class="circlebg"
+								style="position: absolute; top: 27px; left: 55px;">&nbsp;1&nbsp;</span></br>
+
+							<p class="incanvas" style="position: absolute; top: 55px; left: 0px;font-size:15px;">
+								<strong>Objective:</strong>
+							</p>
+
+							<p class="incanvas" style="position: absolute; top: 85px; left: 0px;font-size:14px;"> To
+								determine elevation of an object by trigonometric leveling.</p></br>
+
+							<p class="incanvas" style="position: absolute; top: 115px; left: 0px;font-size:15px;">
+								<strong>Apparatus used:</strong>
+							</p>
+
+							<p class="incanvas" style="position: absolute; top: 145px; left: 0px;font-size:14px;">
+								Theodolite</p></br>
+							<img id="png" class="board" src="images/app.png" alt="picture" width="500"
+								height="330" style="padding-left: 7% ; margin-top: 150px;"><br>
+							<input type="button" id="next"
+								style="position:absolute; left:662px; top:320px; cursor:pointer; font-size: 15px; background-color: #2150a0; padding-top: 5px; color: #FFF; padding-bottom: 5px"
+								value="&nbsp;Start Here&nbsp;" onclick="homestep2()" />
+
+						</div>
+
+						<!-- Step 2 -->
+
+						<div class="Mainstep" id="home-Step2" style=" z-index: 999;">
+
+
+							<span style="position: absolute; left:40px; top: 30px; color:black; font-size: 1.3rem; font-weight: bold;"><i class="fa fa-hand-o-right"
+                                aria-hidden="true"></i>&nbsp;Choose any of the following type of problem </span><br><br>
+
+                            <div class="sub-header" style="position: relative; margin-top:  1rem;">
+                               
+                                <div class="middle1" style="position: absolute; margin-left: 60px; margin-top: 20px;">
+                                <!-- <p>Choose the problem Statement</p> -->
+                              <ol>
+                                <li><a href="simulation.html">find the elevation of structure when base is accessible.</a></li>
+                                <li><a href="simulation1.html">find the elevation of structure when base is not accessible.</a></li>
+                              </ol>
+                               </div>
+							</div>
+						</div>
+					</div>	
+				</td>
+			</tr>
+		</table>
+	</body>
+</body>
+</html>

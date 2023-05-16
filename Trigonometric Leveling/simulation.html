@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+	<meta charset="utf-8">
+
+	<link rel="stylesheet" href="src/css/sim_style.css">
+	<link rel="stylesheet" href="src/css/sim_loading.css">
+	<link href="https://fonts.googleapis.com/css2?family=Open+Sans&amp;family=Raleway&amp;display=swap"
+		rel="stylesheet">
+
+	<link rel="icon" href="favicon.ico">
+	<title>Civil Engineering - Virtual Lab</title>
+	<script src="src/js/sim.js"></script>
+
+
+</head>
+
+
+<body>
+
+
+	<body style="margin:0; font-family: verdana; color: #000;">
+		<table align="center">
+			<tr>
+				<td>
+					<div id="simscreen">
+						<div id="title">
+							<h3>Trigonometric Leveling</h3>
+						</div>
+
+						<!-- Home Page -->
+
+						<div class="Mainstep" id="home" style="visibility: visible;z-index: 1000;">
+
+							
+
+							<p class="incanvas" style="position: absolute; top: 55px; left: 0px;font-size:15px;">
+								<strong>Objective:</strong>
+							</p>
+
+							<p class="incanvas" style="position: absolute; top: 85px; left: 0px;font-size:14px;"> To
+							 find the elevation of structure when base is accessible.</p></br>
+
+							<img id="dia" class="board" src="images/diagram1.png" alt="picture" width="500"
+								height="330" style="padding-left: 7% ; margin-top: 150px;"><br>
+							<input type="button" id="next"
+								style="position:absolute; left:662px; top:320px; cursor:pointer; font-size: 15px; background-color: #2150a0; padding-top: 5px; color: #FFF; padding-bottom: 5px"
+								value="&nbsp;Start Here&nbsp;" onclick="step1()" />
+
+						</div>
+
+						<!-- Step 1 -->
+
+						<div class="Mainstep" id="step1" style="visibility:hidden; z-index: 999;">
+
+							<strong class="incanvas" style="position: absolute; top: 20px; left: 0px;">STEP</strong>
+
+							<span class="circlebg"
+								style="position: absolute; top: 27px; left: 55px;">&nbsp;1&nbsp;</span></br>
+
+							<span style="position: absolute; left:80px; top: 30px;"><i class="fa fa-hand-o-right"
+									aria-hidden="true">&nbsp;Place the theodolite at point a.
+								</i>&nbsp;</span><br><br>
+
+							<img id="step1-png1" class="board" src="images/first.png" alt="picture"
+								width="684" height="385"
+								style="position: absolute;  margin-left: 24px; margin-top: 40px;">
+
+							<img id="step1-png2" class="board" src="images/second.png" alt="picture"
+								width="684" height="385"
+								style="position: absolute;  margin-left: 24px; margin-top: 40px; visibility: hidden;">
+
+
+							<img id="arr1" class="board" src="images/down arrow.gif" alt="picture" width="150"
+								height="50" style="visibility: visible; position: absolute;
+								    margin-left: 28rem;
+   								    margin-top: 238px;">
+
+							<img id="trans1" class="board" src="images/trans-box.png" alt="picture" width="100"
+								height="70"
+								style="visibility: visible; position: absolute;     margin-left: 472px;
+								margin-top: 270px;"
+								onclick="placetheodolite()">
+
+							<input type="button" id="next1"
+								style="visibility: hidden; position:absolute; left:662px; top: 493px; cursor:pointer; font-size: 15px; background-color: #2150a0; padding-top: 5px; color: #FFF; padding-bottom: 5px"
+								value="&nbsp;Next Step&nbsp;" onclick="step2()" />
+
+						</div>
+
+
+						<!-- Step 2 -->
+
+						<div class="Mainstep" id="step2" style="visibility:hidden; z-index: 998;">
+
+							<strong class="incanvas" style="position: absolute; top: 20px; left: 0px;">STEP</strong>
+
+							<span class="circlebg"
+								style="position: absolute; top: 27px; left: 55px;">&nbsp;2&nbsp;</span></br>
+
+							<span style="position: absolute; left:80px; top: 30px;"><i class="fa fa-hand-o-right"
+									aria-hidden="true">&nbsp;
+									Click on level theodolite to level it. Then use the controls to adjust bubble to the centre of bubble tube
+								</i>&nbsp;</span><br><br>
+
+							<img id="step2-png1" class="board" src="images/second.png" alt="picture"
+								width="684" height="385"
+								style="position: absolute;  margin-left: 24px; margin-top: 40px; visibility: hidden;">
+							
+							<img id="bubb" class="board" src="images/bubble.png" alt="picture"
+								width="80" height="80" style="visibility: hidden; position: absolute;
+        						top: 271px;
+    							left: 235px;">
+								<br><br><br><br>
+
+							<img id="bubblet" class="board" src="images/bubble tube.png" alt="picture"
+								width="400" height="400" style="visibility: hidden; position: absolute;
+								margin-left: 195px; margin-top: -13px;" >
+
+							<input type="button" id="level-button"
+								style="visibility: visible; position:absolute; left:311px; top: 493px; cursor:pointer; font-size: 15px; background-color: #2150a0; padding-top: 5px; color: #FFF; padding-bottom: 5px"
+								value="&nbsp;Level Theodolite&nbsp;" onclick="level()" />
+
+							<div class="console" id="console"
+								style="position: absolute; visibility: hidden; margin-left: 666px; margin-top: 117px;">
+								<br><br><br><br>
+
+							<input type=button onClick=move_img('up') value='Up'
+								style="background-color: #2150a0; padding-top: 5px; color: #FFF; position: absolute; 
+								margin-left: 24px; margin-top: -13px;">
+								<br>
+
+							<input type=button onClick=move_img('left') value='Left'
+								style="background-color: #2150a0; padding-top: 5px; color: #FFF;">
+
+							<input type=button onClick=move_img('right') value='right'
+								style="background-color: #2150a0; padding-top: 5px; color: #FFF;">
+								<br>
+
+							<input type=button onClick=move_img('down') value='down'
+								style="background-color: #2150a0; padding-top: 5px; color: #FFF; position: absolute; 
+								margin-left: 18px; margin-top: 5px;">
+								<br><br>
+
+							</div>
+
+							<input type="button" id="next2"
+								style="position:absolute; left:662px; top:493px; cursor:pointer; font-size: 15px; background-color: #2150a0; padding-top: 5px; color: #FFF; padding-bottom: 5px; visibility: hidden;"
+								value="&nbsp;Next Step&nbsp;" onclick="step3()" />
+
+						</div>
+
+						<!-- Step3  -->
+
+
+						<div class="Mainstep" id="step3" style="visibility:hidden; z-index: 997;">
+
+							<strong class="incanvas" style="position: absolute; top: 20px; left: 0px;">STEP</strong>
+
+							<span class="circlebg"
+								style="position: absolute; top: 27px; left: 55px;">&nbsp;3&nbsp;</span></br>
+
+							<span style="position: absolute; left:80px; top: 30px;"><i class="fa fa-hand-o-right"
+									aria-hidden="true">&nbsp;Click on "Angle Measure" to measure the angle of top point. Then try to view the structure through theodolite and take the collimationaxis to the point whose angle is to be measured. Then click on "Take Reading" to get reading.</i>&nbsp;</span><br><br>
+
+							<img id="png4" class="board" src="images/second.png" alt="picture"
+								width="684" height="385"
+								style="position: absolute;  margin-left: 24px; margin-top: 40px; visibility: visible;">
+
+							<img id="meas" class="board" src="images/measure.png" alt="picture"
+								width="600" height="350"
+								style="position: absolute;  margin-left: 24px; margin-top: 40px; visibility: hidden;">
+
+							<img id="scope" class="board" src="images/scope.png" alt="picture"
+								width="200" height="200" style="visibility: hidden; position: absolute;
+								top: 239px;
+    							left: 235px;">
+
+							<img id="reading" class="board" src="images/reading.png" alt="picture"
+								width="180" height="108" style="visibility: hidden; position: absolute;
+								top: 151px;
+    							left: 436px;">
+
+							<div class="board" id="console1"
+								style="position: absolute; visibility: hidden; margin-left: 666px; margin-top: 117px;">
+
+								<input type=button onClick=move_img1('up') value='Up'
+									style="background-color: #2150a0; padding-top: 5px; color: #FFF; position: absolute; 
+									margin-left: 24px;
+									margin-top: -13px;">
+									<br>
+
+								<input type=button onClick=move_img1('left') value='Left'
+									style="background-color: #2150a0; padding-top: 5px; color: #FFF;">
+
+								<input type=button onClick=move_img1('right') value='right'
+									style="background-color: #2150a0; padding-top: 5px; color: #FFF;">
+									<br>
+								
+								<input type=button onClick=move_img1('down') value='down'
+									style="background-color: #2150a0; padding-top: 5px; color: #FFF;
+									position: absolute; 
+									margin-left: 18px;
+									margin-top: 5px;">
+							</div>
+
+							<input type="button" id="measure"
+								style="visibility: visible; position:absolute; left:311px; top: 493px; cursor:pointer; font-size: 15px; background-color: #2150a0; padding-top: 5px; color: #FFF; padding-bottom: 5px"
+								value="&nbsp;Angle Meassure&nbsp;"
+									onclick="moveplate4()">
+
+							<input type="button" id="measurement"
+								style="visibility: hidden; position:absolute; left:311px; top: 493px; cursor:pointer; font-size: 15px; background-color: #2150a0; padding-top: 5px; color: #FFF; padding-bottom: 5px"
+								value="&nbsp;Take Reading&nbsp;"
+									onclick="click_to_measure()">
+													
+							<input type="button" id="next3"
+								style="position:absolute; left:662px; top:493px; cursor:pointer; font-size: 15px; background-color: #2150a0; padding-top: 5px; color: #FFF; padding-bottom: 5px; visibility: hidden;"
+								value="&nbsp;Next Step&nbsp;" onclick="step4()" />
+
+						</div>
+
+						<!-- Step4 -->
+
+						<div class="Mainstep" id="Step4" style="visibility:hidden; z-index: 996;">
+
+							<strong class="incanvas" style="position: absolute; top: 20px; left: 0px;">STEP</strong>
+
+							<span class="circlebg"
+								style="position: absolute; top: 27px; left: 55px;">&nbsp;5&nbsp;</span></br>
+
+							<span style="position: absolute; left:80px; top: 30px;"><i class="fa fa-hand-o-right"
+									aria-hidden="true">&nbsp;Observation and Result:
+								</i>&nbsp;</span><br><br>
+
+							<img id="E_table" class="board" src="images/empty table.png" alt="picture" width="605" height="100"
+								style="position: absolute;  margin-left: 70px; margin-top: 40px; visibility: visible;">
+
+							<img id="f_table" class="board" src="images/fill table.png" alt="picture" width="605" height="100"
+								style="position: absolute;  margin-left: 70px; margin-top: 40px; visibility: hidden;">
+
+							<img id="r_table" class="board" src="images/result.png" alt="picture" width="605" height="100"
+								style="position: absolute;  margin-left: 70px; margin-top: 40px; visibility: hidden;">
+
+							<img id="given" class="board" src="images/give.png" alt="picture" width="150" height="70"
+								style="position: absolute;  margin-left: 70px;
+								margin-top: 159px; visibility: hidden;">
+
+							<img id="formulas" class="board" src="images/form.png" alt="picture" width="200" height="150"
+								style="position: absolute;  margin-left: 66px;
+								margin-top: 226px; visibility: hidden;">
+
+							<input type="button" id="fill"
+								style="visibility: visible; position:absolute; left:311px; top: 493px; cursor:pointer; font-size: 15px; background-color: #2150a0; padding-top: 5px; color: #FFF; padding-bottom: 5px"
+								value="&nbsp;Enter Readings&nbsp;"
+									onclick="readingsfill()">
+							<input type="button" id="check"
+								style="visibility: hidden; position:absolute; left:311px; top: 493px; cursor:pointer; font-size: 15px; background-color: #2150a0; padding-top: 5px; color: #FFF; padding-bottom: 5px"
+								value="&nbsp;Calculate for H&nbsp;"
+									onclick="calc()">
+						</div>
+
+
+					</div>
+				</td>		
+			</tr>
+		</table>
+	</body>
+
+	<script src="js/sim.js"></script>
+
+</html>
